@@ -4,7 +4,7 @@ Destroys the Discord server of your choice.
 
 ## Credits
 
-The sourced from [Technach](https://github.com/technach), I decided it was ok to reporoduced it due to it's genericness, because this is literally the only way you could code it. 
+The idea was sourced from [Technach](https://github.com/technach), I decided it was ok to reporoduced it due to it's genericness, because this is literally the only way you could do it anyway. 
 
 ## Accountability
 
