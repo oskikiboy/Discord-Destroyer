@@ -48,7 +48,7 @@ client.once('ready', () => {
     guild.setName(settings.guildName);
     
     // Success prompt.
-    console.log("\x1b[37m\x1b[42mSuccess\x1b[0m: Operation completed (You may now exit this window)! (^_^)/~");
+    console.info("\x1b[37m\x1b[42mSuccess\x1b[0m: Operation completed! (^_^)/~");
 })
 
 // Login into the bot.
@@ -56,12 +56,12 @@ client.login(settings.botToken);
 
 // Some what handle uncaught exceptions.
 process.on("uncaughtException", err => {
-    console.error("\x1b[37m\x1b[41mERROR\x1b[0m: An unknown and unexpected error occurred! x.x.");
+    console.error("\x1b[37m\x1b[41mERROR\x1b[0m: An unknown and unexpected error occurred! x.x.", err);
     process.exit(1);
 });
 
 // Some what handle unhandled rejections.
 process.on("unhandledRejection", err => {
-    console.error("\x1b[37m\x1b[41mERROR\x1b[0m: An unknown and unexpected error occurred! x.x");
+    //console.error("\x1b[37m\x1b[41mERROR\x1b[0m: An unknown and unexpected error occurred! x.x");
     process.exit(1);
 });
