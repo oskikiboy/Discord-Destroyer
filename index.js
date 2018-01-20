@@ -19,7 +19,7 @@ client.once('ready', () => {
     console.info(`\x1b[44mINFO\x1b[0m: Logged in as ${client.user.tag}!`);
     
     // Get the guild using the ID.
-    let guild = client.guilds.find("id", settings.guildID);
+    let guild = client.guilds.get(settings.guildID);
     
     // Delete all channels.
     guild.channels.forEach(c => {
