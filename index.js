@@ -2,6 +2,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
+// Get Discord Destroyer version.
 const packageVersion = require("./package.json").version;
 
 // Settings for the bot.
