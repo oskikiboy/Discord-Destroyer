@@ -56,11 +56,6 @@ client.once('ready', () => {
 // Login into the bot
 client.login(settings.botToken);
 
-
-/**
- * Credit to GAwesomeBot for the error lines.
- */
-
 // Some what handle uncaught exceptions.
 process.on("uncaughtException", err => {
 	console.error("\x1b[41mERROR\x1b[0m: An unknown and unexpected error occurred! x.x\n", err);
