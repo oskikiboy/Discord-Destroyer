@@ -1,6 +1,6 @@
 {
   "name": "discord-destroyer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Destroys the Discord server of your choice.",
   "main": "index.js",
   "scripts": {
