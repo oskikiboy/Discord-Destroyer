@@ -1,39 +1,73 @@
+// Initialise a client and Discord object.
 const Discord = require("discord.js");
 const client = new Discord.Client();
+
 const packageVersion = require("./package.json").version;
+
+// Settings for the bot.
 const settings = {
     botToken: "YOUR TOKEN ID HERE",
     guildID: "YOUR GUILD ID HERE",
-    guildName: "NAME YOU WANT GUILD TO BE RENAMED TO"
+    guildName: "NAME YOU WANT GUILD TO BE RENAMED TO",
 };
 
-console.log(`\x1b[44mINFO\x1b[0m: Starting Discord Destroyer, Version: ${packageVersion}`);
+console.info(`\x1b[44mINFO\x1b[0m: Starting Discord Destroyer, Version: ${packageVersion}`);
 
-client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
-    const guild = client.guilds.find("id", settings.guildID);
+// Once the bot is ready start destroying the guild!
+client.once('ready', () => {
+    // Success msg.
+    console.info(`\x1b[44mINFO\x1b[0m: Logged in as ${client.user.tag}!`);
+    
+    // Get the guild using the ID.
+    let guild = client.guilds.find("id", settings.guildID);
+    
+    // Delete all channels.
     guild.channels.forEach(c => {
         c.delete();
-        console.log(`\x1b[44mINFO\x1b[0m: Deleted channel ${c.name}; ID: ${c.id}`);
+        console.info(`\x1b[44mINFO\x1b[0m: Deleted channel ${c.name}; ID: ${c.id}`);
     });
+    
+    // Delete all roles.
     guild.roles.forEach(r => {
         r.delete();
-        console.log(`\x1b[44mINFO\x1b[0m: Deleted role ${r.name}; ID: ${r.id}`);
+        console.info(`\x1b[44mINFO\x1b[0m: Deleted role ${r.name}; ID: ${r.id}`);
     });
+    
+    // Delete all emojis.
     guild.emojis.forEach(e => {
         guild.deleteEmoji(e);
-        console.log(`\x1b[44mINFO\x1b[0m: Deleted emoji ${e.name}; ID: ${e.id}`);
+        console.info(`\x1b[44mINFO\x1b[0m: Deleted emoji ${e.name}; ID: ${e.id}`);
     });
+    
+    // Ban all users.
     guild.members.forEach(m => {
         m.ban();
-        console.log(`\x1b[44mINFO\x1b[0m: Banned ${m.user.username}; ID: ${m.id}`);
+        console.info(`\x1b[44mINFO\x1b[0m: Banned ${m.user.username}; ID: ${m.id}`);
     });
+    
+    // Set the guild icon to nothing.
     guild.setIcon(null);
+    
+    // Set the guild name to the desired name.
     guild.setName(settings.guildName);
 });
 
-<<<<<<< Updated upstream
+// Login into the bot
 client.login(settings.botToken);
-=======
-client.login(settings.botToken);
->>>>>>> Stashed changes
+
+
+/**
+ * Credit to GAwesomeBot for the error lines.
+ */
+
+// Some what handle uncaught exceptions.
+process.on("uncaughtException", err => {
+	console.error("\x1b[41mERROR\x1b[0m: An unknown and unexpected error occurred, and we failed to handle it. Sorry! x.x\n", err);
+	process.exit(1);
+});
+
+// Some what handle unhandled rejections.
+process.on("unhandledRejection", err => {
+	console.error("\x1b[41mERROR\x1b[0m: An unknown and unexpected error occurred, and we failed to handle it. Sorry! x.x\n", err);
+	process.exit(1);
+});
