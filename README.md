@@ -7,7 +7,7 @@ Destroys the Discord guild of your choice.
 **MAKE SURE YOU HAVE NODE.JS BEFORE USING THIS!!!**
 
 
-Open index.js in the editor of your choice (preferibly notepad++ or an IDE). Modify the values specified in the settings object. Save the file. Add the bot to the guild of choice. Then execute the bot using ``node idnex``. Watch the guild burn 🔥.
+Open index.js in the editor of your choice (preferibly notepad++ or an IDE). Modify the values specified in the settings object. Save the file. Add the bot to the guild of choice. Then execute the bot using ``node index``. Watch the guild burn. 🔥
 
 ## Credits
 
