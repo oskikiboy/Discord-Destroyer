@@ -9,7 +9,7 @@ const packageVersion = require("./package.json").version;
 const settings = {
     botToken: "YOUR TOKEN HERE",
     guildID: "YOUR GUILD ID HERE",
-    guildName: "Raided by Discord Destroyer!",
+    guildName: "Raided by Discord Destroyer!"
 };
 
 // Startup message,
