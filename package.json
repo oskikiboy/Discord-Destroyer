@@ -17,7 +17,9 @@
     "nuker",
     "destroyer",
     "raid",
-    "rid"
+    "rid",
+    "discord",
+    "overwrite"
   ],
   "author": "oskikiboy",
   "license": "GPL-3.0",
